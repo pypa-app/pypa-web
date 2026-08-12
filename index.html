@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PyPa-AdBlocker — مسدودساز تبلیغات سیستم</title>
+  <meta name="description" content="PyPa-AdBlocker — مسدودساز تبلیغات سیستمی با بیش از ۵۰۰ دامنه. سریع، سبک و امن." />
+  <style>
+    :root{
+      --bg:#0f0b16; /* very dark */
+      --card:#16121b;
+      --muted:#bfb9cf;
+      --accent-purple:#2B1055; /* dark purple */
+      --accent-gold:#D4AF37; /* gold */
+      --accent-green:#2ECC71; /* green */
+      --glass: rgba(255,255,255,0.04);
+      --glass-2: rgba(255,255,255,0.02);
+      --radius:14px;
+      --max-width:1100px;
+      --shadow: 0 8px 30px rgba(2,2,8,0.6);
+      font-family: system-ui,-apple-system,"Segoe UI","Helvetica Neue",Arial,"Noto Sans","Tahoma","Lucida Grande","IranSans","Vazirmatn",sans-serif;
+    }
+
+    html,body{height:100%}
+    body{
+      margin:0;
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(43,16,85,0.12), transparent),
+                  radial-gradient(800px 400px at 90% 80%, rgba(212,175,55,0.06), transparent),
+                  var(--bg);
+      color:#eef0f6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.6;
+      direction:rtl;
+    }
+
+    /* Container */
+    .wrap{max-width:var(--max-width);margin:48px auto;padding:0 20px;}
+
+/* Header */
+header{
+  position:sticky; top:14px; z-index:40;
+  backdrop-filter: blur(6px);
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius: 999px;
+  box-shadow: var(--shadow);
+  padding:8px;
+}
+.header-inner{display:flex;gap:16px;align-items:center;justify-content:space-between;max-width:var(--max-width);margin:0 auto;padding:6px 18px;}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{
+  width:48px;height:48px;border-radius:10px;
+  background: linear-gradient(135deg,var(--accent-purple), rgba(43,16,85,0.6));
+  display:flex;align-items:center;justify-content:center;box-shadow: 0 6px 18px rgba(43,16,85,0.35);
+  font-weight:700;color:var(--accent-gold);font-size:18px;
+}
+.brand h1{margin:0;font-size:16px;letter-spacing:0.4px}
+.nav{display:flex;gap:14px;align-items:center}
+.nav a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:10px;font-size:14px}
+.nav a:hover{color:white;background:var(--glass)}
+.cta{background:linear-gradient(90deg,var(--accent-gold),#c89f2a);color:#0a0910;padding:10px 14px;border-radius:10px;font-weight:600;text-decoration:none}
+.menu-toggle{display:none;background:transparent;border:0;color:var(--muted);padding:8px}
+
+/* Hero / Intro */
+.hero{
+  margin-top:28px;
+  display:grid;grid-template-columns:1fr 420px;gap:32px;align-items:center;
+}
+.hero-card{background:linear-gradient(180deg,var(--card), rgba(255,255,255,0.02));padding:34px;border-radius:var(--radius);box-shadow:var(--shadow);position:relative;overflow:hidden}
+.hero h2{margin:0 0 10px;font-size:28px;color:var(--accent-gold)}
+.hero p{color:var(--muted);margin:0 0 18px}
+.badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.badge{background:var(--glass);padding:8px 10px;border-radius:10px;color:var(--muted);font-weight:600;font-size:13px}
+
+/* Side card */
+.side{
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  padding:22px;border-radius:14px;box-shadow:0 12px 40px rgba(2,2,8,0.6);
+}
+.side .big{font-size:28px;font-weight:700;color:var(--accent-green);margin:0 0 8px}
+.side p{color:var(--muted);margin:0 0 16px}
+.side .btn{display:inline-block;padding:12px 16px;border-radius:12px;background:linear-gradient(90deg,var(--accent-green),#1ea75a);color:#07100a;text-decoration:none;font-weight:700;box-shadow:0 8px 20px rgba(46,204,113,0.12)}
+.side .link{display:inline-block;margin-left:10px;color:var(--muted);text-decoration:none}
+
+/* Features */
+.section{margin:64px 0}
+.section .title{display:flex;align-items:center;gap:12px;margin-bottom:22px}
+.section h3{margin:0;font-size:20px;color:var(--accent-gold)}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.feature{background:linear-gradient(180deg,var(--glass), var(--glass-2));padding:20px;border-radius:12px;color:var(--muted);min-height:120px;transition:transform .36s, box-shadow .36s;transform-origin:center}
+.feature:hover{transform:translateY(-8px);box-shadow:0 20px 50px rgba(0,0,0,0.6)}
+.feature h4{margin:0 0 8px;color:white}
+.icon{width:46px;height:46px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;margin-left:10px}
+
+/* Stats */
+.stats{display:flex;gap:18px;align-items:stretch}
+.stat{flex:1;background:linear-gradient(180deg,var(--card), rgba(255,255,255,0.02));padding:20px;border-radius:12px;text-align:center}
+.stat .num{font-size:26px;font-weight:800;color:var(--accent-gold);margin-bottom:6px}
+.stat p{color:var(--muted);margin:0}
+
+/* Guide */
+.guide{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.step{background:linear-gradient(180deg,var(--glass),transparent);padding:18px;border-radius:12px}
+.step .num{display:inline-block;background:linear-gradient(90deg,var(--accent-purple),#3a1b6f);color:var(--accent-gold);padding:8px 12px;border-radius:999px;font-weight:700;margin-bottom:10px}
+
+/* Testimonials */
+.carousel{position:relative;overflow:hidden;border-radius:12px;background:linear-gradient(180deg,var(--card), rgba(255,255,255,0.02));padding:20px}
+.slides{display:flex;transition:transform .5s ease}
+.slide{min-width:100%;padding:12px}
+.quote{color:var(--muted);Margin:8px 0}
+
+/* Download */
+.download-hero{display:flex;gap:18px;align-items:center;justify-content:space-between;padding:20px;border-radius:12px;background:linear-gradient(90deg, rgba(43,16,85,0.16), rgba(212,175,55,0.06));box-shadow:var(--shadow)}
+.download-hero .left{}
+.download-hero .btn-large{padding:14px 18px;border-radius:12px;background:linear-gradient(90deg,var(--accent-gold),#c89f2a);color:#0a0910;font-weight:800;text-decoration:none}
+
+/* Footer */
+footer{margin-top:40px;padding:28px 20px;border-radius:12px;background:linear-gradient(180deg,var(--card), rgba(255,255,255,0.02));color:var(--muted)}
+.footer-grid{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.small{font-size:13px;color:var(--muted)}
+
+/* Responsive */
+@media (max-width:1000px){
+  .hero{grid-template-columns:1fr}
+  .features{grid-template-columns:repeat(2,1fr)}
+  .guide{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:700px){
+  .nav{display:none}
+  .menu-toggle{display:inline-block}
+  header{padding:8px 12px}
+  .wrap{margin:16px auto;padding:0 14px}
+  .features{grid-template-columns:1fr}
+  .guide{grid-template-columns:1fr}
+  .stats{flex-direction:column}
+}
+
+/* small helpers */
+.kicker{display:inline-block;padding:6px 10px;border-radius:999px;background:linear-gradient(90deg,var(--accent-purple),#3a1b6f);color:var(--accent-gold);font-weight:700;font-size:13px;margin-bottom:10px}
+.pulse{animation:pulse 2.6s infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:1}50%{transform:scale(1.03);opacity:0.9}100%{transform:scale(1);opacity:1}}
+.fade-in{opacity:0;transform:translateY(14px);transition:all .7s ease-out}
+.revealed{opacity:1;transform:none}
+.small-muted{color:var(--muted);font-size:13px}
+.center{display:flex;align-items:center;justify-content:center}
+</style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">PyPa</div>
+        <div>
+          <h1>PyPa-AdBlocker</h1>
+          <div class="small-muted">مسدودساز تبلیغات سیستمی • سبک و امن</div>
+        </div>
+      </div>
+
+      <nav class="nav" role="navigation" aria-label="ناوبری اصلی">
+        <a href="#intro">معرفی</a>
+        <a href="#features">ویژگی‌ها</a>
+        <a href="#stats">آمار</a>
+        <a href="#guide">راهنما</a>
+        <a href="#testimonials">نظرات</a>
+        <a class="cta" href="https://github.com/pypa-app/pypa-app" target="_blank" rel="noopener">گیت‌هاب</a>
+      </nav>
+
+      <button class="menu-toggle" aria-label="باز کردن منو" onclick="toggleMenu()">☰</button>
+    </div>
+
+    <div id="mobile-menu" style="display:none; padding:10px 18px;">
+      <a href="#intro" style="display:block;padding:8px 0;color:var(--muted)">معرفی</a>
+      <a href="#features" style="display:block;padding:8px 0;color:var(--muted)">ویژگی‌ها</a>
+      <a href="#download" style="display:block;padding:8px 0;color:var(--muted)">دانلود</a>
+      <a href="https://github.com/pypa-app/pypa-app" target="_blank" rel="noopener" style="display:block;padding:8px 0;color:var(--muted)">گیت‌هاب</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- Intro / Hero -->
+    <section id="intro" class="hero">
+      <div class="hero-card fade-in">
+        <span class="kicker">مسدودسازی سیستمی</span>
+        <h2>تبلیغات را برای همیشه از سیستم خود پاک کنید</h2>
+        <p>PyPa-AdBlocker با بیش از ۵۰۰ دامنه تعریف‌شده به‌صورت محلی، ترافیک ناخواسته را مسدود می‌کند، حریم خصوصی شما را افزایش می‌دهد و تجربه بدون مزاحمت را فراهم می‌آورد.</p>
+        <div class="badges">
+          <div class="badge">500+ دامنه</div>
+          <div class="badge">پشتیبانی ویندوز</div>
+          <div class="badge">حجم کم و سریع</div>
+        </div>
+
+        <div style="margin-top:18px;">
+          <a class="cta" href="#download">دانلود رایگان</a>
+          <a href="https://github.com/pypa-app/pypa-app" target="_blank" rel="noopener" class="badge" style="margin-left:10px">مشاهده در GitHub</a>
+        </div>
+      </div>
+
+      <aside class="side fade-in" aria-hidden="false">
+        <div class="big">نسخه 4.0.0</div>
+        <p>نصب سریع، پنل سبک و به‌روزرسانی آسان از طریق ریلیزهای گیت‌هاب.</p>
+        <a class="btn" href="https://raw.githubusercontent.com/pypa-app/pypa_app/main/pypa.exe" id="download-btn">دانلود نسخه ویندوز</a>
+        <a class="link" href="#guide">راهنمای نصب</a>
+      </aside>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="section">
+      <div class="title">
+        <h3>ویژگی‌ها</h3>
+      </div>
+      <div class="features">
+        <div class="feature fade-in">
+          <div style="display:flex;align-items:center;">
+            <div class="icon" style="background:linear-gradient(90deg,var(--accent-purple),#3a1b6f)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 12h16" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+            <h4>مسدودسازی سطح سیستم</h4>
+          </div>
+          <p>بلوک کردن تبلیغات پیش از بارگذاری در سطح DNS/Hosts، بدون افزونه مرورگر.</p>
+        </div>
+
+        <div class="feature fade-in">
+          <div style="display:flex;align-items:center;">
+            <div class="icon" style="background:linear-gradient(90deg,var(--accent-gold),#c89f2a)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 5v14" stroke="#0a0910" stroke-width="2" stroke-linecap="round"/></svg></div>
+            <h4>فهرست به‌روز و سبک</h4>
+          </div>
+          <p>لیست بیش از ۵۰۰ دامنه به‌صورت بهینه برای کمترین مصرف منابع و بیشترین تاثیر.</p>
+        </div>
+
+        <div class="feature fade-in">
+          <div style="display:flex;align-items:center;">
+            <div class="icon" style="background:linear-gradient(90deg,var(--accent-green),#1ea75a)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L20 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <h4>امنیت و حفظ حریم خصوصی</h4>
+          </div>
+          <p>بدون ردیابی کاربر، بدون انتقال داده‌های شخصی؛ منبع‌باز و شفاف.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section id="stats" class="section">
+      <div class="title"><h3>آمار</h3></div>
+      <div class="stats">
+        <div class="stat fade-in">
+          <div class="num" data-target="500">0</div>
+          <p>دامنه مسدود شده</p>
+        </div>
+        <div class="stat fade-in">
+          <div class="num" data-target="20000">0</div>
+          <p>نصب فعال (تقریبی)</p>
+        </div>
+        <div class="stat fade-in">
+          <div class="num" data-target="4.8">0</div>
+          <p>امتیاز کاربران (میانگین)</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Guide -->
+    <section id="guide" class="section">
+      <div class="title"><h3>راهنما</h3></div>
+      <div class="guide">
+        <div class="step fade-in">
+          <div class="num">1</div>
+          <h4>دانلود</h4>
+          <p class="small-muted">فایل اجرایی را از صفحه ریلیز گیت‌هاب یا لینک مستقیم دانلود کنید.</p>
+        </div>
+        <div class="step fade-in">
+          <div class="num">2</div>
+          <h4>نصب</h4>
+          <p class="small-muted">فایل را اجرا کرده و مراحل نصب را دنبال کنید؛ نیاز به دسترسی ادمین دارد.</p>
+        </div>
+        <div class="step fade-in">
+          <div class="num">3</div>
+          <h4>شروع و به‌روزرسانی</h4>
+          <p class="small-muted">پس از اجرا، برنامه به‌صورت محلی تبلیغات را مسدود کرده و به‌روزرسانی لیست از طریق ریلیزها انجام می‌شود.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="section">
+      <div class="title"><h3>نظرات</h3></div>
+      <div class="carousel fade-in">
+        <div class="slides" id="slides">
+          <div class="slide">
+            <strong>مریم رضایی</strong>
+            <div class="quote">"بعد از نصب PyPa-AdBlocker سرعت بارگذاری سایت‌ها بهتر شد و تبلیغات آزاردهنده ناپدید شدند."</div>
+            <div class="small-muted">کاربر ویندوز</div>
+          </div>
+          <div class="slide">
+            <strong>علی کریمی</strong>
+            <div class="quote">"نصب ساده و عملکرد قابل اعتماد؛ فهرست دامنه‌ها کامل و سبک است."</div>
+            <div class="small-muted">توسعه‌دهنده</div>
+          </div>
+          <div class="slide">
+            <strong>سارا محمدی</strong>
+            <div class="quote">"عالی برای کاربرانی که نمی‌خواهند افزونه‌های مرورگر نصب کنند."</div>
+            <div class="small-muted">طراح تجربه کاربری</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Download -->
+    <section id="download" class="section">
+      <div class="title"><h3>دانلود</h3></div>
+      <div class="download-hero fade-in">
+        <div class="left">
+          <h4>شروع کنید — سریع، ایمن و رایگان</h4>
+          <p class="small-muted">نسخه ویندوز آماده است. برای بارگیری روی دکمه کلیک کنید.</p>
+        </div>
+        <div class="right center">
+          <a class="btn-large" href="https://raw.githubusercontent.com/pypa-app/pypa_app/main/pypa.exe" id="download-hero-btn">دانلود</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-grid">
+        <div>
+          <strong>PyPa-AdBlocker</strong>
+          <div class="small-muted">مسدودساز تبلیغات سیستمی — متن باز</div>
+        </div>
+
+        <div>
+          <div style="display:flex;gap:8px;align-items:center">
+            <a href="https://github.com/pypa-app/pypa-app" target="_blank" rel="noopener" class="small-muted">گیت‌هاب</a>
+            <a href="#guide" class="small-muted">راهنما</a>
+            <a href="#intro" class="small-muted">تماس</a>
+          </div>
+          <div style="margin-top:10px" class="small-muted">لایسنس: MIT</div>
+        </div>
+
+        <div style="text-align:left">
+          <div class="small-muted">© کلیه حقوق برای PyPa محفوظ است.</div>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // Mobile menu toggle
+    function toggleMenu(){
+      const el = document.getElementById('mobile-menu');
+      el.style.display = (el.style.display === 'none' || el.style.display === '') ? 'block' : 'none';
+    }
+
+    // Smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', function(e){
+        const target = document.querySelector(this.getAttribute('href'));
+        if(target){
+          e.preventDefault();
+          target.scrollIntoView({behavior:'smooth',block:'start'});
+          // close mobile menu if open
+          const mm = document.getElementById('mobile-menu');
+          if(mm && mm.style.display === 'block') mm.style.display = 'none';
+        }
+      });
+    });
+
+    // Reveal on scroll
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('revealed');
+        }
+      });
+    },{threshold:0.15});
+
+    document.querySelectorAll('.fade-in').forEach(el=>{
+      observer.observe(el);
+    });
+
+    // Counter animation
+    function animateCount(el, target, duration=1200){
+      const start = 0;
+      const isFloat = (target+'').includes('.');
+      const steps = Math.ceil(duration/16);
+      let current = start;
+      let step = (target - start) / steps;
+      let i = 0;
+      const t = setInterval(()=>{
+        i++;
+        current += step;
+        if(i>=steps){
+          clearInterval(t);
+          el.textContent = target + (isFloat ? '' : (target>=1000 ? '' : ''));
+          return;
+        }
+        el.textContent = (isFloat ? current.toFixed(1) : Math.round(current));
+      },16);
+    }
+
+    document.addEventListener('DOMContentLoaded',()=>{
+      // Start counters when stats visible
+      const statsObserver = new IntersectionObserver((entries, obs)=>{
+        entries.forEach(entry=>{
+          if(entry.isIntersecting){
+            document.querySelectorAll('.stat .num').forEach(node=>{
+              const tgt = parseFloat(node.getAttribute('data-target')) || 0;
+              animateCount(node, tgt, 1500);
+            });
+            obs.disconnect();
+          }
+        });
+      },{threshold:0.5});
+      const statsSection = document.getElementById('stats');
+      if(statsSection) statsObserver.observe(statsSection);
+
+      // Simple testimonials slider
+      const slides = document.getElementById('slides');
+      let idx = 0;
+      const total = slides ? slides.children.length : 0;
+      if(slides && total>1){
+        setInterval(()=>{
+          idx = (idx+1) % total;
+          slides.style.transform = 'translateX(-' + (idx*100) + '%)';
+        },4200);
+      }
+
+      // Small: track download clicks (no external analytics)
+      const dlBtns = document.querySelectorAll('#download-btn, #download-hero-btn');
+      dlBtns.forEach(b=>{
+        b.addEventListener('click',()=>{ b.classList.add('pulse'); setTimeout(()=>b.classList.remove('pulse'),900); });
+      });
+    });
+  </script>
+</body>
+</html>
