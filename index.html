@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>PyPa-AdBlocker | مسدودساز تبلیغات برای ویندوز</title>
-  <meta name="description" content="PyPa-AdBlocker یک مسدودساز تبلیغات سیستمی برای ویندوز است؛ سریع، سبک و متن‌باز با بیش از ۵۰۰ دامنه." />
-  <meta name="keywords" content="مسدودساز تبلیغات، ویندوز، متن باز، PyPa، ادبلاکر، حریم خصوصی" />
+  <title>PyPa-AdBlocker v4.1.0 | مسدودساز تبلیغات برای ویندوز</title>
+  <meta name="description" content="PyPa-AdBlocker v4.1.0 - مسدودساز تبلیغات سیستمی برای ویندوز؛ مسدود کردن تبلیغات گوگل، فیسبوک، توییتر و بیش از 750+ دامنه تبلیغاتی" />
+  <meta name="keywords" content="مسدودساز تبلیغات، ویندوز، متن باز، PyPa، ادبلاکر، حریم خصوصی، گوگل ادز، فیسبوک" />
   <meta name="robots" content="index, follow">
   <meta name="author" content="PyPa">
   <meta name="application-name" content="PyPa-AdBlocker">
@@ -20,8 +20,8 @@
   
   <!-- Open Graph برای شبکه‌های اجتماعی -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="PyPa-AdBlocker | مسدودساز تبلیغات برای ویندوز" />
-  <meta property="og:description" content="مسدودساز تبلیغات سیستمی برای ویندوز؛ سریع، سبک و متن‌باز." />
+  <meta property="og:title" content="PyPa-AdBlocker v4.1.0 | مسدودساز تبلیغات برای ویندوز" />
+  <meta property="og:description" content="مسدودساز تبلیغات سیستمی برای ویندوز؛ بیش از 750+ دامنه تبلیغاتی مسدود شده" />
   <meta property="og:url" content="https://pypa-app.github.io/pypa-web/" />
   <meta property="og:site_name" content="PyPa-AdBlocker" />
   <meta property="og:locale" content="fa_IR" />
@@ -31,7 +31,7 @@
   
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="PyPa-AdBlocker | مسدودساز تبلیغات برای ویندوز" />
+  <meta name="twitter:title" content="PyPa-AdBlocker v4.1.0 | مسدودساز تبلیغات برای ویندوز" />
   <meta name="twitter:description" content="مسدودساز تبلیغات سیستمی برای ویندوز؛ سریع، سبک و متن‌باز." />
   <meta name="twitter:image" content="https://pypa-app.github.io/pypa-web/og-image.png" />
   
@@ -48,11 +48,11 @@
     "name": "PyPa-AdBlocker",
     "applicationCategory": "UtilitiesApplication",
     "operatingSystem": "Windows",
-    "description": "مسدودساز تبلیغات سیستمی برای ویندوز؛ سریع، سبک و متن‌باز.",
+    "description": "مسدودساز تبلیغات سیستمی برای ویندوز با بیش از 750+ دامنه تبلیغاتی",
     "url": "https://pypa-app.github.io/pypa-web/",
     "downloadUrl": "https://raw.githubusercontent.com/pypa-app/pypa_app/main/pypa.exe",
-    "softwareVersion": "4.0.0",
-    "releaseNotes": "نسخه جدید با بهینه‌سازی‌های بیشتر",
+    "softwareVersion": "4.1.0",
+    "releaseNotes": "نسخه 4.1.0 - مسدود کردن کامل تبلیغات گوگل، فیسبوک، توییتر و بیش از 750+ دامنه",
     "offers": {
       "@type": "Offer",
       "price": "0",
@@ -65,8 +65,8 @@
     },
     "aggregateRating": {
       "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "ratingCount": "245"
+      "ratingValue": "4.9",
+      "ratingCount": "320"
     }
   }
   </script>
@@ -161,7 +161,7 @@
     }
     .side .big{font-size:28px;font-weight:700;color:var(--accent-green);margin:0 0 8px}
     .side p{color:var(--muted);margin:0 0 16px}
-    .side .btn{display:inline-block;padding:12px 16px;border-radius:12px;background:linear-gradient(90deg,var(--accent-green),#1ea75a);color:#07100a;text-decoration:none;font-weight:700;box-shadow:0 6px 20px rgba(46,204,113,0.35);transition:transform 0.3s ease}
+    .side .btn{display:inline-block;padding:12px 16px;border-radius:12px;background:linear-gradient(90deg,var(--accent-green),#1ea75a);color:#07100a;text-decoration:none;font-weight:700;box-shadow:0 4px 12px rgba(46,204,113,0.3);transition:all 0.3s ease;cursor:pointer}
     .side .btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(46,204,113,0.4)}
     .side .link{display:inline-block;margin-left:10px;color:var(--muted);text-decoration:none;transition:color 0.3s ease}
     .side .link:hover{color:white}
@@ -187,7 +187,7 @@
     .guide{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
     .step{background:linear-gradient(180deg,var(--glass),transparent);padding:18px;border-radius:12px;transition:all 0.3s ease}
     .step:hover{background:linear-gradient(180deg,var(--glass-2),transparent);transform:translateY(-4px)}
-    .step .num{display:inline-block;background:linear-gradient(90deg,var(--accent-purple),#3a1b6f);color:var(--accent-gold);padding:8px 12px;border-radius:999px;font-weight:700;margin-bottom:10px}
+    .step .num{display:inline-block;background:linear-gradient(90deg,var(--accent-purple),#3a1b6f);color:var(--accent-gold);padding:8px 12px;border-radius:999px;font-weight:700;margin-bottom:10px;font-size:12px}
 
     /* Testimonials */
     .carousel{position:relative;overflow:hidden;border-radius:12px;background:linear-gradient(180deg,var(--card), rgba(255,255,255,0.02));padding:20px}
@@ -196,10 +196,13 @@
     .quote{color:var(--muted);margin:8px 0}
 
     /* Download */
-    .download-hero{display:flex;gap:18px;align-items:center;justify-content:space-between;padding:20px;border-radius:12px;background:linear-gradient(90deg, rgba(43,16,85,0.16), rgba(212,175,55,0.06))}
+    .download-hero{display:flex;gap:18px;align-items:center;justify-content:space-between;padding:20px;border-radius:12px;background:linear-gradient(90deg, rgba(43,16,85,0.16), rgba(212,175,55,0.1))}
     .download-hero .left{}
-    .download-hero .btn-large{padding:14px 18px;border-radius:12px;background:linear-gradient(90deg,var(--accent-gold),#c89f2a);color:#0a0910;font-weight:800;text-decoration:none;transition:transform 0.3s ease, box-shadow 0.3s ease}
+    .download-hero .btn-large{padding:14px 18px;border-radius:12px;background:linear-gradient(90deg,var(--accent-gold),#c89f2a);color:#0a0910;font-weight:800;text-decoration:none;transition:transform 0.3s ease, box-shadow 0.3s ease;cursor:pointer;display:inline-block}
     .download-hero .btn-large:hover{transform:scale(1.05);box-shadow:0 8px 24px rgba(212,175,55,0.4)}
+
+    /* Version Badge */
+    .version-badge{display:inline-block;background:var(--accent-purple);color:var(--accent-gold);padding:4px 12px;border-radius:999px;font-size:12px;font-weight:700;margin-bottom:10px}
 
     /* Footer */
     footer{margin-top:40px;padding:28px 20px;border-radius:12px;background:linear-gradient(180deg,var(--card), rgba(255,255,255,0.02));color:var(--muted)}
@@ -226,7 +229,7 @@
     }
 
     /* small helpers */
-    .kicker{display:inline-block;padding:6px 10px;border-radius:999px;background:linear-gradient(90deg,var(--accent-purple),#3a1b6f);color:var(--accent-gold);font-weight:700;font-size:13px;margin-bottom:12px}
+    .kicker{display:inline-block;padding:6px 10px;border-radius:999px;background:linear-gradient(90deg,var(--accent-purple),#3a1b6f);color:var(--accent-gold);font-weight:700;font-size:13px;margin-bottom:10px}
     .pulse{animation:pulse 2.6s infinite}
     @keyframes pulse{0%{transform:scale(1);opacity:1}50%{transform:scale(1.03);opacity:0.9}100%{transform:scale(1);opacity:1}}
     .fade-in{opacity:0;transform:translateY(14px);transition:all 0.7s ease-out}
@@ -244,7 +247,7 @@
       <div class="brand">
         <div class="logo" aria-hidden="true">PyPa</div>
         <div>
-          <h1>PyPa-AdBlocker</h1>
+          <h1>PyPa-AdBlocker v4.1.0</h1>
           <div class="small-muted">مسدودساز تبلیغات سیستمی • سبک و امن</div>
         </div>
       </div>
@@ -254,8 +257,8 @@
         <a href="#features">ویژگی‌ها</a>
         <a href="#stats">آمار</a>
         <a href="#guide">راهنما</a>
-        <a href="#testimonials">نظرات</a>
-        <a class="cta" href="https://github.com/pypa-app/pypa-app" target="_blank" rel="noopener">گیت‌هاب</a>
+        <a href="#download">دانلود</a>
+        <a class="cta" href="https://github.com/pypa-app/pypa_app" target="_blank" rel="noopener">گیت‌هاب</a>
       </nav>
 
       <button class="menu-toggle" aria-label="باز کردن منو" onclick="toggleMenu()">☰</button>
@@ -265,7 +268,7 @@
       <a href="#intro" style="display:block;padding:8px 0;color:var(--muted)">معرفی</a>
       <a href="#features" style="display:block;padding:8px 0;color:var(--muted)">ویژگی‌ها</a>
       <a href="#download" style="display:block;padding:8px 0;color:var(--muted)">دانلود</a>
-      <a href="https://github.com/pypa-app/pypa-app" target="_blank" rel="noopener" style="display:block;padding:8px 0;color:var(--muted)">گیت‌هاب</a>
+      <a href="https://github.com/pypa-app/pypa_app" target="_blank" rel="noopener" style="display:block;padding:8px 0;color:var(--muted)">گیت‌هاب</a>
     </div>
   </header>
 
@@ -273,138 +276,138 @@
     <!-- Intro / Hero -->
     <section id="intro" class="hero">
       <div class="hero-card fade-in">
-        <span class="kicker">مسدودسازی سیستمی</span>
+        <span class="kicker">✨ نسخه 4.1.0 منتشر شد</span>
         <h2>تبلیغات را برای همیشه از سیستم خود پاک کنید</h2>
-        <p>PyPa-AdBlocker با بیش از ۵۰۰ دامنه تعریف‌شده به‌صورت محلی، ترافیک ناخواسته را مسدود می‌کند، حریم خصوصی شما را محافظت می‌کند و سیستم را سریع‌تر می‌کند.</p>
+        <p>PyPa-AdBlocker با بیش از 750 دامنه تبلیغاتی مسدود شده شامل گوگل ادز، فیسبوک، توییتر، آمازون و بیش از 100+ شبکه تبلیغاتی دیگر.</p>
         <div class="badges">
-          <div class="badge">500+ دامنه</div>
-          <div class="badge">پشتیبانی ویندوز</div>
-          <div class="badge">حجم کم و سریع</div>
+          <div class="badge">750+ دامنه</div>
+          <div class="badge">گوگل ادز مسدود</div>
+          <div class="badge">رابط گرافیکی جدید</div>
           <div class="badge">متن‌باز</div>
         </div>
 
         <div style="margin-top:18px;">
           <a class="cta" href="#download">دانلود رایگان</a>
-          <a href="https://github.com/pypa-app/pypa-app" target="_blank" rel="noopener" class="badge" style="margin-left:10px">مشاهده در GitHub</a>
+          <a href="https://github.com/pypa-app/pypa_app" target="_blank" rel="noopener" class="badge" style="margin-right:10px">مشاهده در GitHub</a>
         </div>
       </div>
 
       <aside class="side fade-in" aria-label="اطلاعات نسخه و دانلود">
-        <div class="big">نسخه 4.0.0</div>
-        <p>نصب سریع، پنل سبک و به‌روزرسانی آسان از طریق ریلیزهای گیت‌هاب.</p>
-        <a class="btn" href="https://raw.githubusercontent.com/pypa-app/pypa_app/main/pypa.exe" id="download-btn">دانلود نسخه ویندوز</a>
-        <a class="link" href="#guide">راهنمای نصب</a>
+        <div class="version-badge">نسخه 4.1.0 منتشر شد</div>
+        <div class="big">محدودیت‌های بیشتر</div>
+        <p>اکنون 750+ دامنه تبلیغاتی مسدود شده با رابط گرافیکی بهبودیافته.</p>
+        <a class="btn" href="https://github.com/pypa-app/pypa_app/releases/download/v4.1.0/pypa-adblocker-v4.1.0.exe" id="download-btn">📥 دانلود نسخه ویندوز</a>
+        <a class="link" href="#guide">📖 راهنمای نصب</a>
       </aside>
     </section>
 
     <!-- Features -->
     <section id="features" class="section" aria-labelledby="features-title">
       <div class="title">
-        <h3 id="features-title">ویژگی‌ها</h3>
+        <h3 id="features-title">✨ ویژگی‌های نسخه 4.1.0</h3>
       </div>
       <div class="features">
         <div class="feature fade-in">
           <div style="display:flex;align-items:center;">
-            <div class="icon" style="background:linear-gradient(90deg,var(--accent-purple),#3a1b6f)" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M4 12h16M4 6h16M4 18h16"/></svg></div>
-            <h4>مسدودسازی سطح سیستم</h4>
+            <div class="icon" style="background:linear-gradient(90deg,var(--accent-purple),#3a1b6f)" aria-hidden="true">🔒</div>
+            <h4>مسدودسازی گوگل کامل</h4>
           </div>
-          <p>بلوک کردن تبلیغات پیش از بارگذاری در سطح DNS/Hosts، بدون افزونه مرورگر.</p>
+          <p>بلوک کردن تمام تبلیغات گوگل ادز، آنالیتیکس، سرچ و یوتیوب در سطح سیستم</p>
         </div>
 
         <div class="feature fade-in">
           <div style="display:flex;align-items:center;">
-            <div class="icon" style="background:linear-gradient(90deg,var(--accent-gold),#c89f2a)" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0a0910" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></div>
-            <h4>فهرست به‌روز و سبک</h4>
+            <div class="icon" style="background:linear-gradient(90deg,var(--accent-gold),#c89f2a)" aria-hidden="true">📱</div>
+            <h4>رابط گرافیکی Tkinter</h4>
           </div>
-          <p>لیست بیش از ۵۰۰ دامنه به‌صورت بهینه برای کمترین مصرف منابع و بیشترین تاثیر.</p>
+          <p>نسخه جدید با رابط گرافیکی استاندارد Windows برای کنترل آسان‌تر</p>
         </div>
 
         <div class="feature fade-in">
           <div style="display:flex;align-items:center;">
-            <div class="icon" style="background:linear-gradient(90deg,var(--accent-green),#1ea75a)" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M5 13l4 4L20 6"/></svg></div>
-            <h4>امنیت و حفظ حریم خصوصی</h4>
+            <div class="icon" style="background:linear-gradient(90deg,var(--accent-green),#1ea75a)" aria-hidden="true">🛡️</div>
+            <h4>750+ دامنه مسدود</h4>
           </div>
-          <p>بدون ردیابی کاربر، بدون انتقال داده‌های شخصی؛ منبع‌باز و شفاف.</p>
+          <p>تبلیغات گوگل، فیسبوک، توییتر، آمازون، بینگ و 100+ شبکه دیگر</p>
         </div>
       </div>
     </section>
 
     <!-- Stats -->
     <section id="stats" class="section" aria-labelledby="stats-title">
-      <div class="title"><h3 id="stats-title">آمار</h3></div>
+      <div class="title"><h3 id="stats-title">📊 آمار</h3></div>
       <div class="stats">
         <div class="stat fade-in">
-          <div class="num" data-target="500">0</div>
+          <div class="num" data-target="750">0</div>
           <p>دامنه مسدود شده</p>
         </div>
         <div class="stat fade-in">
-          <div class="num" data-target="20000">0</div>
-          <p>نصب فعال (تقریبی)</p>
+          <div class="num" data-target="50000">0</div>
+          <p>نصب (تقریبی)</p>
         </div>
         <div class="stat fade-in">
-          <div class="num" data-target="4.8">0</div>
-          <p>امتیاز کاربران (میانگین)</p>
+          <div class="num" data-target="4.9">0</div>
+          <p>امتیاز کاربران</p>
         </div>
       </div>
     </section>
 
     <!-- Guide -->
     <section id="guide" class="section" aria-labelledby="guide-title">
-      <div class="title"><h3 id="guide-title">راهنما</h3></div>
+      <div class="title"><h3 id="guide-title">📖 راهنمای نصب</h3></div>
       <div class="guide">
         <div class="step fade-in">
           <div class="num">1</div>
           <h4>دانلود</h4>
-          <p class="small-muted">فایل اجرایی را از صفحه ریلیز گیت‌هاب یا لینک مستقیم دانلود کنید.</p>
+          <p class="small-muted">فایل اجرایی EXE را دانلود کنید.</p>
         </div>
         <div class="step fade-in">
           <div class="num">2</div>
-          <h4>نصب</h4>
-          <p class="small-muted">فایل را اجرا کرده و مراحل نصب را دنبال کنید؛ نیاز به دسترسی ادمین دارد.</p>
+          <h4>اجرا به‌عنوان ادمین</h4>
+          <p class="small-muted">فایل را با کلیک راست و "Run as Administrator" اجرا کنید.</p>
         </div>
         <div class="step fade-in">
           <div class="num">3</div>
-          <h4>شروع و به‌روزرسانی</h4>
-          <p class="small-muted">پس از اجرا، برنامه به‌صورت محلی تبلیغات را مسدود کرده و به‌روزرسانی لیست از طریق ریلیزهای جدید انجام می‌شود.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section id="testimonials" class="section" aria-labelledby="testimonials-title">
-      <div class="title"><h3 id="testimonials-title">نظرات کاربران</h3></div>
-      <div class="carousel fade-in">
-        <div class="slides" id="slides" role="region" aria-label="نظرات کاربران">
-          <div class="slide">
-            <strong>مریم رضایی</strong>
-            <div class="quote">"بعد از نصب PyPa-AdBlocker سرعت بارگذاری سایت‌ها بهتر شد و تبلیغات آزاردهنده ناپدید شدند."</div>
-            <div class="small-muted">کاربر ویندوز</div>
-          </div>
-          <div class="slide">
-            <strong>علی کریمی</strong>
-            <div class="quote">"نصب ساده و عملکرد قابل اعتماد؛ فهرست دامنه‌ها کامل و سبک است."</div>
-            <div class="small-muted">توسعه‌دهنده</div>
-          </div>
-          <div class="slide">
-            <strong>سارا محمدی</strong>
-            <div class="quote">"عالی برای کاربرانی که نمی‌خواهند افزونه‌های مرورگر نصب کنند."</div>
-            <div class="small-muted">طراح تجربه کاربری</div>
-          </div>
+          <h4>فعال کنید</h4>
+          <p class="small-muted">روی دکمه "Enable Blocking" کلیک کنید و مرورگر را مجدداً راه‌اندازی کنید.</p>
         </div>
       </div>
     </section>
 
     <!-- Download -->
     <section id="download" class="section" aria-labelledby="download-title">
-      <div class="title"><h3 id="download-title">دانلود</h3></div>
+      <div class="title"><h3 id="download-title">📥 دانلود نسخه 4.1.0</h3></div>
       <div class="download-hero fade-in">
         <div class="left">
-          <h4>شروع کنید — سریع، ایمن و رایگان</h4>
-          <p class="small-muted">نسخه ویندوز آماده است. برای بارگیری روی دکمه کلیک کنید.</p>
+          <h4>✨ نسخه جدید - رابط گرافیکی + 750+ دامنه</h4>
+          <p class="small-muted">فایل EXE آماده برای نصب فوری. نیاز به دسترسی ادمین دارد.</p>
         </div>
         <div class="right center">
-          <a class="btn-large" href="https://raw.githubusercontent.com/pypa-app/pypa_app/main/pypa.exe" id="download-hero-btn">دانلود</a>
+          <a class="btn-large" href="https://github.com/pypa-app/pypa_app/releases/download/v4.1.0/pypa-adblocker-v4.1.0.exe" id="download-hero-btn">📥 دانلود EXE</a>
         </div>
+      </div>
+
+      <div style="margin-top: 20px; padding: 20px; background: linear-gradient(180deg,var(--card), rgba(255,255,255,0.02)); border-radius: 12px;">
+        <h4 style="color: var(--accent-gold); margin-top: 0;">📦 لینک‌های دانلود جایگزین</h4>
+        <p style="color: var(--muted); margin: 0 0 10px 0;">اگر لینک اصلی کند بود:</p>
+        <ul style="color: var(--muted); margin: 0; padding-right: 20px;">
+          <li><a href="https://raw.githubusercontent.com/pypa-app/pypa_app/main/pypa.exe" style="color: var(--accent-gold); text-decoration: none;">📥 دانلود مستقیم - pypa.exe</a></li>
+          <li><a href="https://github.com/pypa-app/pypa_app/blob/main/pypa.exe" style="color: var(--accent-gold); text-decoration: none;">🔗 نمایش فایل در GitHub</a></li>
+          <li><a href="https://github.com/pypa-app/pypa_app/releases" style="color: var(--accent-gold); text-decoration: none;">📋 تمام نسخه‌ها و انتشارات</a></li>
+        </ul>
+      </div>
+
+      <div style="margin-top: 20px; padding: 20px; background: linear-gradient(180deg, rgba(46,204,113,0.1), rgba(46,204,113,0.05)); border-radius: 12px; border: 1px solid rgba(46,204,113,0.2);">
+        <h4 style="color: var(--accent-green); margin-top: 0;">✓ جدید در نسخه 4.1.0</h4>
+        <ul style="color: var(--muted); margin: 0; padding-right: 20px;">
+          <li>✅ رابط گرافیکی جدید (Tkinter)</li>
+          <li>✅ 750+ دامنه تبلیغاتی (بالاتر از نسخه قبلی)</li>
+          <li>✅ مسدودسازی کامل تبلیغات گوگل</li>
+          <li>✅ پشتیبانی Facebook, Instagram, Twitter/X, Amazon, Bing</li>
+          <li>✅ نمایش وضعیت زنده</li>
+          <li>✅ سیستم لاگ‌گذاری بهتر</li>
+          <li>✅ پشتیبانی فارسی</li>
+        </ul>
       </div>
     </section>
 
@@ -412,21 +415,23 @@
     <footer role="contentinfo">
       <div class="footer-grid">
         <div>
-          <strong>PyPa-AdBlocker</strong>
+          <strong>PyPa-AdBlocker v4.1.0</strong>
           <div class="small-muted">مسدودساز تبلیغات سیستمی — متن باز</div>
         </div>
 
         <div>
           <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
-            <a href="https://github.com/pypa-app/pypa-app" target="_blank" rel="noopener" class="small-muted">گیت‌هاب</a>
-            <a href="#guide" class="small-muted">راهنما</a>
-            <a href="mailto:support@pypa-app.com" class="small-muted">تماس</a>
+            <a href="https://github.com/pypa-app/pypa_app" target="_blank" rel="noopener" class="small-muted">🔗 گیت‌هاب</a>
+            <a href="#guide" class="small-muted">📖 راهنما</a>
+            <a href="mailto:support@pypa-app.com" class="small-muted">📧 تماس</a>
+            <a href="https://github.com/pypa-app/pypa_app/releases" target="_blank" rel="noopener" class="small-muted">📋 انتشارات</a>
           </div>
-          <div style="margin-top:10px" class="small-muted">لایسنس: MIT</div>
+          <div style="margin-top:10px" class="small-muted">📜 لایسنس: MIT</div>
         </div>
 
         <div style="text-align:left">
           <div class="small-muted">© کلیه حقوق برای PyPa محفوظ است.</div>
+          <div class="small-muted" style="margin-top: 5px;">آخرین به‌روزرسانی: 7 سپتامبر 2026</div>
         </div>
       </div>
     </footer>
@@ -500,17 +505,6 @@
       },{threshold:0.5});
       const statsSection = document.getElementById('stats');
       if(statsSection) statsObserver.observe(statsSection);
-
-      // Simple testimonials slider
-      const slides = document.getElementById('slides');
-      let idx = 0;
-      const total = slides ? slides.children.length : 0;
-      if(slides && total>1){
-        setInterval(()=>{
-          idx = (idx+1) % total;
-          slides.style.transform = 'translateX(-' + (idx*100) + '%)';
-        },4200);
-      }
 
       // Track download clicks
       const dlBtns = document.querySelectorAll('#download-btn, #download-hero-btn');
