@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pypa-app.github.io/pypa-web/sitemap.xml
